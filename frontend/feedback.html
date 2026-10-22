@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Quality Control - Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="top-menu">
+        <div class="menu-left">
+            <img src="top quality control.webp" alt="Logo">
+        </div>
+        <div class="menu-right">
+            <a href="Home.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+    <div class="feedback-container">
+        <h1>Feedback Form</h1>
+        <form id="feedbackForm" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Feedback:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p id="responseMessage" style="display:none;">Thank you for your feedback!</p>
+    </div>
+
+    <script>
+        function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    if (name == "" || email == "" || message == "") {
+        alert("All fields are required.");
+        return false;
+    }
+
+    document.getElementById("responseMessage").style.display = "block";
+    document.getElementById("feedbackForm").reset();
+    return false;
+}
+
+    </script>
+<br>
+<br><br><br><br><br><br><br><br><br>
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <p>© 2024 Automated Quality Control, Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
